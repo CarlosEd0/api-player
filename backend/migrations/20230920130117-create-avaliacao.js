@@ -10,10 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idJogo: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Jogos', key: 'id'},
+        onDelete: 'CASCADE'
       },
       idJogador: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Jogadors', key: 'id'},
+        onDelete: 'CASCADE'
       },
       comentario: {
         type: Sequelize.STRING

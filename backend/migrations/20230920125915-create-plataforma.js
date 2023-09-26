@@ -16,7 +16,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       idJogo: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Jogos', key: 'id'},
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,
