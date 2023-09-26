@@ -2,33 +2,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Jogos', {
+    await queryInterface.createTable('GeneroJogos', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      titulo: {
-        type: Sequelize.STRING
+      idGenero: {
+        type: Sequelize.INTEGER
       },
-      descricao: {
-        type: Sequelize.STRING
-      },
-      genero: {
-        type: Sequelize.STRING
-      },
-      plataformas: {
-        type: Sequelize.STRING
-      },
-      midiaDoJogo: {
-        type: Sequelize.STRING
-      },
-      desenvolvedora: {
-        type: Sequelize.STRING
-      },
-      data_lancamento: {
-        type: Sequelize.DATE
+      idJogo: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Jogos');
+    await queryInterface.dropTable('GeneroJogos');
   }
 };

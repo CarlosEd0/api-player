@@ -1,0 +1,10 @@
+npx sequelize-cli model:generate --name Genero --attributes descricao:STRING
+
+npx sequelize-cli model:generate --name AvaliacaoJogo --attributes idJogo:INTEGER,idJogador:INTEGER,comentario:STRING,dataAvaliacao:DATE
+
+npx sequelize-cli model:generate --name Conquista --attributes nomeConquista:STRING,descricaoConquista:STRING,pontuacao:STRING,idJogo:INTEGER,idJogador:INTEGER
+
+npx sequelize-cli model:generate --name Plataforma --attributes nomePlataforma:STRING,descricaoPlataforma:STRING,idJogo:INTEGER
+
+npx sequelize-cli model:generate --name GeneroJogo --attributes idGenero:INTEGER,idJogo:INTEGER
+

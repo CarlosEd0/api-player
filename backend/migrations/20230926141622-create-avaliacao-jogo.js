@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Avaliacaos', {
+    await queryInterface.createTable('AvaliacaoJogos', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -10,22 +10,16 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idJogo: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'Jogos', key: 'id'},
-        onDelete: 'CASCADE'
+        type: Sequelize.INTEGER
       },
       idJogador: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'Jogadors', key: 'id'},
-        onDelete: 'CASCADE'
+        type: Sequelize.INTEGER
       },
       comentario: {
         type: Sequelize.STRING
       },
       dataAvaliacao: {
-        type: Sequelize.STRING
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,
@@ -38,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Avaliacaos');
+    await queryInterface.dropTable('AvaliacaoJogos');
   }
 };

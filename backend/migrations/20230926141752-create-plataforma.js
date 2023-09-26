@@ -2,33 +2,21 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Conquista', {
+    await queryInterface.createTable('Plataformas', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      nomeConquista: {
+      nomePlataforma: {
         type: Sequelize.STRING
       },
-      descricaoConquista: {
-        type: Sequelize.STRING
-      },
-      pontuacao: {
+      descricaoPlataforma: {
         type: Sequelize.STRING
       },
       idJogo: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'Jogos', key: 'id'},
-        onDelete: 'CASCADE'
-      },
-      idJogador: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: { model: 'Jogadors', key: 'id'},
-        onDelete: 'CASCADE'
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -41,6 +29,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Conquista');
+    await queryInterface.dropTable('Plataformas');
   }
 };
