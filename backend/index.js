@@ -6,6 +6,7 @@ const app =  express();
 const port = 3000;
 
 const jogo = require('./controllers/jogoController.js');
+const jogador = require('./controllers/jogoController.js');
 
 app.use(bodyParser.json());
 app.use(cors())
