@@ -3,7 +3,7 @@ const router = express.Router();
 const Jogos = require('../models').Jogo;
 
 //Cadastro de Jogo
-router.post('/', async (req, res) => {
+router.post('/add', async (req, res) => {
     const {descricao} = req.body;
     const {titulo} = req.body;
     const {imagensJogo} = req.body;
