@@ -10,7 +10,7 @@ router.post('/add', async (req, res) => {
     const {desenvolvedoraJogo} = req.body;
     const {dataLancamento} = req.body;
     const newEdit = await Jogos.create ({descricao, titulo, imagensJogo, desenvolvedoraJogo, dataLancamento});
-    res.status(200).json({message: 'Cadastrado com sucesso'});
+    res.status(200).json({message: 'Cadastrado com sucesso', newEdit});
 });
 
 module.exports=router;
